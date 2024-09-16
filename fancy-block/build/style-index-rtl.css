@@ -1,0 +1,37 @@
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.wp-block-create-block-fancy-block {
+  background-color: #6dbce0;
+  color: #fff;
+  padding: 2px;
+  padding: 3rem;
+}
+.wp-block-create-block-fancy-block .fancy-block-content {
+  display: inline-block;
+  animation: bounce 2s infinite;
+}
+.wp-block-create-block-fancy-block .fancy-block-content .kicker-text {
+  display: inline-block;
+  padding: 1rem;
+}
+.wp-block-create-block-fancy-block .fancy-block-content .headline-text {
+  width: 80%;
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}

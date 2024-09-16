@@ -1,0 +1,37 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-create-block-fancy-block {
+	background-color: #6dbce0;
+	color: #fff;
+	padding: 2px;
+	padding: 3rem;
+
+	.fancy-block-content {
+		display: inline-block;
+		animation: bounce 2s infinite;
+		.kicker-text {
+			display: inline-block;
+			padding: 1rem;
+		}
+		.headline-text {
+			width: 80%;
+		}
+	}
+
+	@keyframes bounce {
+		0%, 20%, 50%, 80%, 100% {
+			transform: translateY(0);
+		}
+		40% {
+			transform: translateY(-30px);
+		}
+		60% {
+			transform: translateY(-15px);
+		}
+	}
+}
