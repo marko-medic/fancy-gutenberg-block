@@ -1,12 +1,11 @@
 import { __ } from "@wordpress/i18n";
 
-import { useBlockProps, InspectorControls } from "@wordpress/block-editor";
+import { useBlockProps, InspectorControls, PanelColorSettings } from "@wordpress/block-editor";
 
 import "./editor.scss";
 import {
 	TextControl,
 	TextareaControl,
-	ColorPicker,
 	Panel,
 	PanelBody,
 } from "@wordpress/components";
@@ -34,34 +33,35 @@ export default function Edit({ attributes, setAttributes }) {
 		<>
 			<InspectorControls>
 				<Panel header="Kicker color settings">
-					<PanelBody title="Kicker background color">
-						<ColorPicker
-							color={kickerBgColor}
-							onChange={handleChange("kickerBgColor")}
-						/>
+					<PanelBody>
+					<PanelColorSettings
+						__experimentalIsRenderedInSidebar
+						title="Set text colors"
+						colorSettings={[
+							{
+								value: kickerTextColor,
+								label: "Kicker color",
+								onChange: handleChange('kickerTextColor'),
+							},
+							{
+								value: kickerBgColor,
+								label: "Kicker background color",
+								onChange: handleChange('kickerBgColor'),
+							},
+							{
+								value: headlineTextColor,
+								label: "Headline color",
+								onChange: handleChange('headlineTextColor'),
+							},
+							{
+								value: subdeckTextColor,
+								label: "Subdeck color",
+								onChange: handleChange('subdeckTextColor'),
+							},,
+						]}
+					/>
 					</PanelBody>
-					<PanelBody title="Kicker text color">
-						<ColorPicker
-							color={kickerTextColor}
-							onChange={handleChange("kickerTextColor")}
-						/>
-					</PanelBody>
-				</Panel>
-				<Panel>
-					<PanelBody title="Headline text color">
-						<ColorPicker
-							color={headlineTextColor}
-							onChange={handleChange("headlineTextColor")}
-						/>
-					</PanelBody>
-				</Panel>
-				<Panel>
-					<PanelBody title="Subdeck text color">
-						<ColorPicker
-							color={subdeckTextColor}
-							onChange={handleChange("subdeckTextColor")}
-						/>
-					</PanelBody>
+
 				</Panel>
 			</InspectorControls>
 			<div {...useBlockProps()}>
